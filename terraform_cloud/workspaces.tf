@@ -14,6 +14,21 @@ resource "tfe_workspace" "workspace" {
   }
 }
 
+resource "tfe_workspace" "github-workspace" {
+  name         = "myGithub"
+  organization = tfe_organization.org.id
+  file_triggers_enabled = false
+  global_remote_state = true
+  terraform_version = "1.0.1"
+  working_directory = "/github"
+  execution_mode = "local"
+  vcs_repo {
+    identifier     = "orenzp/myTerraform"
+    branch         = "main"
+    oauth_token_id = tfe_oauth_client.github.oauth_token_id
+  }
+}
+
 resource "tfe_variable" "github_api_key" {
   key          = "github_api_key"
   value        = var.github_token
