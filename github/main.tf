@@ -1,19 +1,10 @@
-terraform {
-  required_providers {
-    github = {
-      source  = "integrations/github"
-      version = "~> 4.0"
-    }
-  }
-}
-
-provider "github" {
-  token = var.token
-}
-
-resource "github_repository" "example" {
-  name        = "example"
-  description = "My awesome codebase"
-
-  visibility = "private"
+resource "github_repository" "terraform-github-repo" {
+  name               = "terraform-github-repo"
+  description        = "Terraform module for creating Github Repositories"
+  has_issues         = false
+  auto_init          = true
+  gitignore_template = "Terraform"
+  license_template   = "mit"
+  has_projects       = false
+  visibility         = "public"
 }

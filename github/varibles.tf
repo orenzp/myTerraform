@@ -1,3 +1,8 @@
-variable "token" {
-  type = string
+variable "tfe_token" {
+  type        = string
+  description = "Terraform Cloud Api Key"
+}
+variable "github_token" {
+  type        = string
+  description = "Github Account Access Key"
 }
