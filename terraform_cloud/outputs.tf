@@ -1,6 +1,6 @@
-output "oauth_client_id" {
-  value       = tfe_oauth_client.github.oauth_token_id
-  sensitive   = false
-  description = "description"
-  depends_on  = [tfe_oauth_client.github]
-}
+# output "oauth_client_id" {
+#   value       = data.tfe_oauth_client.tfe_oauth.oauth_token_id
+#   sensitive   = false
+#   description = "description"
+#   depends_on  = [data.tfe_oauth_client.tfe_oauth]
+# }
