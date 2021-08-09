@@ -18,3 +18,6 @@ variable "instance_count" {
   type    = number
   default = 1
 }
+variable "secrets" {
+  type = map(string)
+}
